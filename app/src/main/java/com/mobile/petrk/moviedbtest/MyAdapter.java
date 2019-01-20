@@ -48,9 +48,10 @@ import java.util.List;
     public View getView(int position, View convertView, ViewGroup parent) {
         View itemView = convertView;
         itemView = (itemView == null) ? inflater.inflate(R.layout.linear_layout_output,null): itemView;
-        TextView movieNameTextview = (TextView) itemView.findViewById(R.id.textviewName);
         ImageView moviePoster = (ImageView) itemView.findViewById(R.id.imageview);
+        TextView movieNameTextview = (TextView) itemView.findViewById(R.id.textviewName);
         Result selectedResult = list.get(position);
+
         if (selectedResult.getImgURL()=="not available")
             Picasso.get().load("http://i.imgur.com/DvpvklR.png").resize(200, 200)
                     .centerCrop().into(moviePoster);
