@@ -1,13 +1,13 @@
-package com.mobile.petrk.moviedbtest;
+package pojo;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class SpokenLanguage {
+public class Genre {
 
-    @SerializedName("iso_639_1")
+    @SerializedName("id")
     @Expose
-    private String iso6391;
+    private Integer id;
     @SerializedName("name")
     @Expose
     private String name;
@@ -16,26 +16,26 @@ public class SpokenLanguage {
      * No args constructor for use in serialization
      *
      */
-    public SpokenLanguage() {
+    public Genre() {
     }
 
     /**
      *
-     * @param iso6391
+     * @param id
      * @param name
      */
-    public SpokenLanguage(String iso6391, String name) {
+    public Genre(Integer id, String name) {
         super();
-        this.iso6391 = iso6391;
+        this.id = id;
         this.name = name;
     }
 
-    public String getIso6391() {
-        return iso6391;
+    public Integer getId() {
+        return id;
     }
 
-    public void setIso6391(String iso6391) {
-        this.iso6391 = iso6391;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getName() {

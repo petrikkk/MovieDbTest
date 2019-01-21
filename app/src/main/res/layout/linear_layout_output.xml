@@ -1,9 +1,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:padding="6dip"
     android:orientation="horizontal"
-    android:background="@color/black_overlay">
+    android:background="@color/black_overlay"
+    android:paddingTop="4dp"
+    android:paddingBottom="4dp">
 
     <ImageView
         android:id="@+id/imageview"
@@ -13,25 +14,34 @@
         android:scaleType="center"
         />
 
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="bottom"
+        android:layout_alignParentBottom="true">
+
+
     <TextView
         android:id="@+id/textviewName"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/imageview"
         android:layout_alignRight="@+id/imageview"
         android:layout_alignTop="@+id/imageview"
         android:layout_alignBottom="@+id/imageview"
-        android:layout_gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="1dp"
+        android:textColor="#ffffff"
         android:shadowColor="#000"
         android:shadowDx="2"
         android:shadowDy="2"
-        android:shadowRadius="1.5"
+        android:shadowRadius="3"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#ffffff"
         android:textAlignment="center"
-
         />
-
+    </LinearLayout>
 
 
 

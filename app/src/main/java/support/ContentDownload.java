@@ -1,27 +1,14 @@
-package com.mobile.petrk.moviedbtest;
+package support;
 
-import android.app.DownloadManager;
-import android.content.Context;
-import android.net.Uri;
-import android.os.AsyncTask;
+
 import android.os.Environment;
-import android.text.Html;
-import android.util.Log;
-
-import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileReader;
-import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.MalformedURLException;
-import java.net.URLConnection;
-
 import java.net.URL;
-
 public class ContentDownload {
 
 
@@ -29,26 +16,14 @@ public class ContentDownload {
     private String UrlAddress;
 
     public ContentDownload() {
-
     }
 
-    public String getFilename() {
-        return fileName;
-    }
-
-    public void setFilename(String filename) {
-        this.fileName = filename;
-    }
-
-    public String getURL() {
-        return UrlAddress;
-    }
 
     public void setURL(String Address) {
         this.UrlAddress = Address;
     }
     public void DownloadFiles(String urlAddress, String fileName){
-
+     //stahuje json objekty na uloziste
         try {
             URL u = new URL(urlAddress);
             InputStream is = u.openStream();
@@ -59,7 +34,7 @@ public class ContentDownload {
             int length;
 
             FileOutputStream fos = new FileOutputStream(new File(Environment.getExternalStorageDirectory() + "/Download/" + fileName));
-            //System.out.println("Cesta k ulozisti: "+Environment.getExternalStorageDirectory());
+
             while ((length = dis.read(buffer))>0) {
                 fos.write(buffer, 0, length);
             }
@@ -69,7 +44,7 @@ public class ContentDownload {
         }
 
     }
-
+//pomocna metoda pro kontrolni cteni stazenych souboru
     public void ReadFile (String path) {
         String fileName = path;
         File file = new File(fileName);
@@ -78,7 +53,7 @@ public class ContentDownload {
             BufferedReader br = new BufferedReader(fr);
             String line;
             while ((line = br.readLine()) != null) {
-                   //System.out.println(line);
+                   System.out.println(line);
             }
         } catch (Exception e){
             e.printStackTrace();

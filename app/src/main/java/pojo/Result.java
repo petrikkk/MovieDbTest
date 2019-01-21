@@ -1,9 +1,12 @@
-package com.mobile.petrk.moviedbtest;
+package pojo;
+
+import android.os.Parcel;
+import android.os.Parcelable;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Result {
+public class Result  {
 
     @SerializedName("id")
     @Expose
@@ -11,6 +14,14 @@ public class Result {
     @SerializedName("adult")
     @Expose
     private Boolean adult;
+
+
+
+    public Result(Parcel in){
+        this.id = in.readInt();
+        this.movieName = in.readString();
+        this.imgURL =  in.readString();
+    }
 
     public String getImgURL() {
         return imgURL;
@@ -65,5 +76,6 @@ public class Result {
     public void setAdult(Boolean adult) {
         this.adult = adult;
     }
+
 
 }

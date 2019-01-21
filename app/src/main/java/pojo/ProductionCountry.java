@@ -1,13 +1,13 @@
-package com.mobile.petrk.moviedbtest;
+package pojo;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Genre {
+public class ProductionCountry {
 
-    @SerializedName("id")
+    @SerializedName("iso_3166_1")
     @Expose
-    private Integer id;
+    private String iso31661;
     @SerializedName("name")
     @Expose
     private String name;
@@ -16,26 +16,26 @@ public class Genre {
      * No args constructor for use in serialization
      *
      */
-    public Genre() {
+    public ProductionCountry() {
     }
 
     /**
      *
-     * @param id
+     * @param iso31661
      * @param name
      */
-    public Genre(Integer id, String name) {
+    public ProductionCountry(String iso31661, String name) {
         super();
-        this.id = id;
+        this.iso31661 = iso31661;
         this.name = name;
     }
 
-    public Integer getId() {
-        return id;
+    public String getIso31661() {
+        return iso31661;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setIso31661(String iso31661) {
+        this.iso31661 = iso31661;
     }
 
     public String getName() {

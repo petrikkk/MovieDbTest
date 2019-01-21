@@ -1,4 +1,4 @@
-package com.mobile.petrk.moviedbtest;
+package pojo;
 
 import java.util.List;
 import com.google.gson.annotations.Expose;
