@@ -32,15 +32,19 @@ public class MovieDetailActivity extends AppCompatActivity {
         //naplneni pojo
         movieDetailsPOJO = loadLists.getDetailsList(movieId);
         ComposeDetails composeDetails = new ComposeDetails();
-        //seskladani textu z pojo a naplneni textviwe
-        stringBuilder = composeDetails.getComposedDetails(movieDetailsPOJO);
-        if (movieDetailsPOJO.getPosterPath()!=null)
-            Picasso.get().load("https://image.tmdb.org/t/p/w500"+movieDetailsPOJO.getPosterPath()).resize(800, 800)
-                    .into(moviePoster);
-        else Picasso.get().load("http://i.imgur.com/DvpvklR.png").resize(800, 800)
-                .centerCrop().into(moviePoster);
+        //seskladani textu z pojo a naplneni textview
+        try {
+            stringBuilder = composeDetails.getComposedDetails(movieDetailsPOJO);
+            if (movieDetailsPOJO.getPosterPath() != null)
+                Picasso.get().load("https://image.tmdb.org/t/p/w500" + movieDetailsPOJO.getPosterPath()).resize(800, 800)
+                        .into(moviePoster);
+            else Picasso.get().load("http://i.imgur.com/DvpvklR.png").resize(800, 800)
+                    .centerCrop().into(moviePoster);
+            textView.setMovementMethod(new ScrollingMovementMethod());
+            textView.setText(stringBuilder.toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-        textView.setMovementMethod(new ScrollingMovementMethod());
-        textView.setText(stringBuilder.toString());
     }
 }

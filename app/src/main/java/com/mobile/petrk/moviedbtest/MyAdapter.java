@@ -55,7 +55,7 @@ class MyAdapter extends BaseAdapter {
         TextView movieNameTextview = (TextView) itemView.findViewById(R.id.textviewName);
         Result selectedResult = list.get(position);
          //nahrazuje "adult" nebo prazdne obrazky, jinak nahraje spravny poster
-        if (selectedResult.getAdult()==true | selectedResult.getImgURL()==null)
+        if   (selectedResult.getImgURL()==null | (selectedResult.getAdult()==true))
             Picasso.get().load("http://i.imgur.com/DvpvklR.png").resize(800, 800)
                     .centerCrop().into(moviePoster);
         else

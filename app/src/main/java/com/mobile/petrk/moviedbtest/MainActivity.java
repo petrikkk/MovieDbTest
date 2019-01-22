@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         }
         if (moviesSelected > 50)
             moviesSelected = 50;
-        if (moviesSelected < 0)
+        if (moviesSelected < 1)
             moviesSelected = 1;
         CreateListView(moviesSelected);
 

@@ -20,6 +20,7 @@
             android:layout_height="50dp"
             android:orientation="horizontal">
             <TextView
+                android:paddingTop="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:id="@+id/textNumbers"
